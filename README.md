@@ -5,7 +5,7 @@ CSE 5373 General Purpose GPU Architecture Final Project
 
 2. make
 
-3. ./sharpen
+3. ./sharpen <IMAGE>
    
 BEFORE
 ![image](https://github.com/user-attachments/assets/21aa2436-fd8b-4a5e-97ff-b29981614f8f)
