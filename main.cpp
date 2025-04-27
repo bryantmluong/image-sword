@@ -10,11 +10,18 @@
 void cuda_sharpen_naive(unsigned char* input, unsigned char* output, int width, int height, int channels);
 void cuda_sharpen_shared(unsigned char* input, unsigned char* output, int width, int height, int channels);
 
-int main() {
+int main(int argc, char* argv[]) {
+    if (argc < 2) {
+        std::cerr << "Usage: " << argv[0] << " <input_image>\n";
+        return -1;
+    }
+
+    const char* input_filename = argv[1];
+
     int width, height, channels;
-    unsigned char* img = stbi_load("input.jpg", &width, &height, &channels, 0);
+    unsigned char* img = stbi_load(input_filename, &width, &height, &channels, 0);
     if (!img) {
-        std::cerr << "Failed to load image\n";
+        std::cerr << "Failed to load image: " << input_filename << "\n";
         return -1;
     }
 
