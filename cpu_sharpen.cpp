@@ -2,9 +2,9 @@
 #include <algorithm>
 
 void cpu_sharpen(unsigned char* input, unsigned char* output, int width, int height, int channels) {
-    int filter[3][3] = {
+    float filter[3][3] = {
         { 0, -1, 0 },
-        { -1, 5, -1 },
+        { -1, 5.35, -1 },
         { 0, -1, 0 }
     };
 

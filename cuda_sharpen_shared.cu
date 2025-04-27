@@ -22,9 +22,9 @@ __global__ void sharpen_shared_kernel(unsigned char* input, unsigned char* outpu
         if (x > 0 && x < width-1 && y > 0 && y < height-1) {
             for (int c = 0; c < channels; ++c) {
                 int sum = 0;
-                int filter[3][3] = {
+                float filter[3][3] = {
                     { 0, -1, 0 },
-                    { -1, 5, -1 },
+                    { -1, 5.25, -1 },
                     { 0, -1, 0 }
                 };
                 for (int fy = -1; fy <= 1; ++fy) {
